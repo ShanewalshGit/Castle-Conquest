@@ -226,7 +226,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 605983392}
   - component: {fileID: 605983391}
   - component: {fileID: 605983390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4445,6 +4445,40 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &721875333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5193226728663408825, guid: 71cd9a1adf137144d9f1dc41036b0019, type: 3}
+  m_PrefabInstance: {fileID: 5193226729197593899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &721875340
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721875333}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.9333333, y: 1.9333333}
+    newSize: {x: 1.8125, y: 1.8125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.1257217, y: -0.49409947}
+      - {x: 0.30204874, y: -0.49678972}
+      - {x: 0.3008985, y: -0.37968227}
+      - {x: -0.12554008, y: -0.3801947}
 --- !u!1001 &5193226729197593899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4462,7 +4496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193226728663408830, guid: 71cd9a1adf137144d9f1dc41036b0019, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.03
+      value: -3.62
       objectReference: {fileID: 0}
     - target: {fileID: 5193226728663408830, guid: 71cd9a1adf137144d9f1dc41036b0019, type: 3}
       propertyPath: m_LocalPosition.y
