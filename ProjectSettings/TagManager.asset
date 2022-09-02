@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - Ground
   - Climbing
-  - 
-  - 
+  - World Confiner
+  - Player
   - 
   - 
   - 
@@ -41,6 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: World Confiner
+    uniqueID: 3806190013
+    locked: 0
   - name: Background
     uniqueID: 4117243017
     locked: 0
@@ -49,6 +53,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3990857117
+    locked: 0
+  - name: Player
+    uniqueID: 400253607
     locked: 0
   - name: Foreground
     uniqueID: 3179675015
