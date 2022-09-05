@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 15f;
     [SerializeField] float climbingSpeed = 8f;
+    [SerializeField] Vector2 hitKick = new Vector2(30f, 30f);
 
     float controlThrow;
     Rigidbody2D myRigidBody2D;
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
     PolygonCollider2D myPlayersFeet;
 
     float startingGravityScale;
+    bool inPain = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +33,35 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Run();
-        Jump();
-        Climb();
+        if(!inPain)
+        {
+            Run();
+            Jump();
+            Climb();
+
+            if(myBoxCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+            {
+                PlayerHit();
+            }
+        }
     }
+
+    private void PlayerHit()
+    {
+        myRigidBody2D.velocity = hitKick * new Vector2(-transform.localScale.x, 1f);
+        
+        myAnimator.SetTrigger("Hitting");
+        inPain = true;
+
+        StartCoroutine(StopHurting());
+        }
+
+        IEnumerator StopHurting()
+        {
+            yield return new WaitForSeconds(2f);
+
+            inPain = false;
+        }
 
     private void Climb()
     {
