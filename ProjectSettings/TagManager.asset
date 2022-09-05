@@ -19,7 +19,7 @@ TagManager:
   - World Confiner
   - Player
   - Enemy
-  - 
+  - Obstacles
   - 
   - 
   - 
@@ -48,17 +48,17 @@ TagManager:
   - name: Background
     uniqueID: 4117243017
     locked: 0
-  - name: Decorations
+  - name: Climbing
     uniqueID: 4023665349
-    locked: 0
-  - name: Player
-    uniqueID: 3990857117
     locked: 0
   - name: Enemy
     uniqueID: 2195560897
     locked: 0
   - name: Player
-    uniqueID: 400253607
+    uniqueID: 3990857117
+    locked: 0
+  - name: Obstacles
+    uniqueID: 1866722617
     locked: 0
   - name: Foreground
     uniqueID: 3179675015
