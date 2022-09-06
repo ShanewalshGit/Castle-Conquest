@@ -8,7 +8,9 @@ public class Player : MonoBehaviour
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 15f;
     [SerializeField] float climbingSpeed = 8f;
+    [SerializeField] float attackRadius = 3f;
     [SerializeField] Vector2 hitKick = new Vector2(30f, 30f);
+    [SerializeField] Transform hurtBox;
 
     float controlThrow;
     Rigidbody2D myRigidBody2D;
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour
             Run();
             Jump();
             Climb();
+            Attack();
 
             if(myBoxCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemy")))
             {
@@ -46,7 +49,22 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void PlayerHit()
+    private void Attack()
+    {
+        if(CrossPlatformInputManager.GetButtonDown("Fire1"))
+        {
+            myAnimator.SetTrigger("Attacking");
+            Collider2D[] enemiesToHit = Physics2D.OverlapCircleAll(hurtBox.position, attackRadius, LayerMask.GetMask("Enemy"));
+
+            foreach(Collider2D enemy in enemiesToHit)
+            {
+                enemy.GetComponent<Enemy>().Dying();
+            }
+        
+        }
+    }
+
+    public void PlayerHit()
     {
         myRigidBody2D.velocity = hitKick * new Vector2(-transform.localScale.x, 1f);
         
@@ -121,6 +139,11 @@ public class Player : MonoBehaviour
         {
             transform.localScale = new Vector2(Mathf.Sign(myRigidBody2D.velocity.x), 1f);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(hurtBox.position, attackRadius);
     }
 
 }
