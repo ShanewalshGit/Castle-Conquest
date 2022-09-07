@@ -46,6 +46,18 @@ public class Player : MonoBehaviour
             {
                 PlayerHit();
             }
+
+            ExitLevel();
+        }
+    }
+
+    private void ExitLevel()
+    {
+        if(myBoxCollider2D.IsTouchingLayers(LayerMask.GetMask("Doors"))) { return; }
+
+        if(CrossPlatformInputManager.GetButtonDown("Vertical"))
+        {
+            FindObjectOfType<ExitDoor>().StartLoadingNextLevel();
         }
     }
 

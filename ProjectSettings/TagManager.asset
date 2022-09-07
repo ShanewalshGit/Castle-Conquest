@@ -20,7 +20,7 @@ TagManager:
   - Player
   - Enemy
   - Obstacles
-  - 
+  - Doors
   - 
   - 
   - 
@@ -54,11 +54,14 @@ TagManager:
   - name: Enemy
     uniqueID: 2195560897
     locked: 0
-  - name: Player
-    uniqueID: 3990857117
-    locked: 0
   - name: Obstacles
     uniqueID: 1866722617
+    locked: 0
+  - name: Doors
+    uniqueID: 337814853
+    locked: 0
+  - name: Player
+    uniqueID: 3990857117
     locked: 0
   - name: Foreground
     uniqueID: 3179675015
