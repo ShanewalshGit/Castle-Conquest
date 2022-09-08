@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ExitDoor : MonoBehaviour
 {
-    [SerializeField] float secondsToLoad = 2f;
+    [SerializeField] float secondsToLoad = 0.5f;
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
