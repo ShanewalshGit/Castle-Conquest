@@ -83,9 +83,10 @@ public class Player : MonoBehaviour
         
         myAnimator.SetTrigger("Hitting");
         inPain = true;
+        FindObjectOfType<GameSession>().ProcessPlayerDeath();
 
         StartCoroutine(StopHurting());
-        }
+    }
 
         IEnumerator StopHurting()
         {

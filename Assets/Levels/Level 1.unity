@@ -32937,6 +32937,51 @@ PolygonCollider2D:
       - {x: -11.720818, y: -7.6571627}
       - {x: 51.744057, y: -7.76033}
       - {x: 51.75174, y: 42.756714}
+--- !u!1 &166809853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 166809855}
+  - component: {fileID: 166809854}
+  m_Layer: 0
+  m_Name: Game Session
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &166809854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166809853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307af85eca57cd44fb3c0d30b1280fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLives: 3
+--- !u!4 &166809855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166809853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &323940474
 GameObject:
   m_ObjectHideFlags: 0
@@ -34108,6 +34153,10 @@ MonoBehaviour:
   - m_Hash: 256545655
     m_ParentHash: 756556552
   - m_Hash: -725336713
+    m_ParentHash: 756556552
+  - m_Hash: -1126790766
+    m_ParentHash: 756556552
+  - m_Hash: 2095466574
     m_ParentHash: 756556552
 --- !u!4 &511821396
 Transform:
