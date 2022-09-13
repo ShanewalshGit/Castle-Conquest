@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
         myPlayersFeet = GetComponent<PolygonCollider2D>();
 
         startingGravityScale = myRigidBody2D.gravityScale;
+
+        myAnimator.SetTrigger("DoorOut");
     }
 
     // Update is called once per frame
@@ -58,8 +60,19 @@ public class Player : MonoBehaviour
 
         if(CrossPlatformInputManager.GetButtonDown("Vertical"))
         {
-            FindObjectOfType<ExitDoor>().StartLoadingNextLevel();
+            myAnimator.SetTrigger("DoorIn");
         }
+    }
+
+    public void LoadNextLevel()
+    {
+        FindObjectOfType<ExitDoor>().StartLoadingNextLevel();
+        TurnOffRenderer();
+    }
+
+    public void TurnOffRenderer()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private void Attack()
