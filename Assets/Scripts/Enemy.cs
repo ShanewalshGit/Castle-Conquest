@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float enemyRunSpeed = 5f;
+    [SerializeField] AudioClip dyingSFX;
+
 
     Rigidbody2D enemyRigidBody;
     Animator myAnimator;
@@ -25,6 +27,7 @@ public class Enemy : MonoBehaviour
     public void Dying()
     {
         myAnimator.SetTrigger("Die");
+
         GetComponent<CapsuleCollider2D>().enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
         enemyRigidBody.bodyType = RigidbodyType2D.Static;
@@ -63,5 +66,10 @@ public class Enemy : MonoBehaviour
     private bool IsFacingLeft()
     {
         return transform.localScale.x > 0;
+    }
+
+    void EnemyDyingSFX()
+    {
+        AudioSource.PlayClipAtPoint(dyingSFX, Camera.main.transform.position);
     }
 }
